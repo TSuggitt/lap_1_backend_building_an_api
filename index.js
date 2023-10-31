@@ -1,4 +1,5 @@
 require("dotenv").config()
+const cors = require("cors")
 const express = require("express")
 const fs = require("fs")
 const app = express()
@@ -7,7 +8,9 @@ const app = express()
 const logger = require("./logger")
 
 app.use(express.json())
+app.use(cors)
 app.use(logger)
+
 
 // ! DATA IMPORT
 
